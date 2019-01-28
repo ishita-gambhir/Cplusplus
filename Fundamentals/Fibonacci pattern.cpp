@@ -27,7 +27,7 @@ int main(){
 	if(n >= 2){
 		cout << a << endl;
 		cout << b << " " << a+b << endl;
-
+		a = b;
 		for (i = 3; i <= n; i++){
 			for(j = 0; j < i; j++){
 				c = a + b;
