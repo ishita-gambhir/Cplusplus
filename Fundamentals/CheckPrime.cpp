@@ -17,7 +17,7 @@ using namespace std;
 int main(){
 	int Number, numberOfFactors = 0;
 	cin >> Number;
-	for(int i = 1; i <= numberOfFactors; i++){
+	for(int i = 1; i <= Number; i++){
 		if(Number % i == 0)
 			numberOfFactors++;
 	}
