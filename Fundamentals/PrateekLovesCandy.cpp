@@ -38,6 +38,8 @@ int main(){
 	int numberOfPrimeNums = 0, cost = 1, numberOfTestCases = 0, i = 0, counter = 0;
 	cin >> numberOfTestCases;
 	for(i = 0; i < numberOfTestCases; i++){
+		cost = 1;
+		counter = 0;
 		cin >> numberOfPrimeNums;
 		while(counter != numberOfPrimeNums){
 			if(PrimeCheck(cost))
