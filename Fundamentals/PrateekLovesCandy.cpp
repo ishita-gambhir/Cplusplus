@@ -40,7 +40,7 @@ int main(){
 	cin >> numberOfTestCases;
 	for(i = 0; i < numberOfTestCases; i++){
         counter = 0;
-        cost = 1;
+        cost = 2;
 		cin >> numberOfPrimeNums;
 		while(counter != numberOfPrimeNums){
 			isPrime = PrimeCheck(cost);
@@ -48,7 +48,7 @@ int main(){
 				counter++;
 			cost++;
 		}
-		cout << --cost;
+		cout << --cost << endl;
 	}
 	return 0;
 }
