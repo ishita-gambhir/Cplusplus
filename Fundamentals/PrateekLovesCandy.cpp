@@ -22,27 +22,29 @@ Sample Output
 */
 #include<iostream>
 using namespace std;
-bool PrimeCheck(int Number){
+int PrimeCheck(int Number){
 	int numberOfFactors = 0, index = 0;
-	for(index = 1; index <= Number; index++){
+	for(index = 2; index < Number; index++){
 		if(Number % index == 0){
 			numberOfFactors++;
+			break;
 		}
 	}
-	if(numberOfFactors == 2)
+	if(numberOfFactors == 0)
 		return 1;
 	else
 		return 0;
 }
 int main(){
-	int numberOfPrimeNums = 0, cost = 1, numberOfTestCases = 0, i = 0, counter = 0;
+	int numberOfPrimeNums = 0, cost = 1, numberOfTestCases = 0, i = 0, counter = 0, isPrime = 0;
 	cin >> numberOfTestCases;
 	for(i = 0; i < numberOfTestCases; i++){
-		cost = 1;
-		counter = 0;
+        counter = 0;
+        cost = 1;
 		cin >> numberOfPrimeNums;
 		while(counter != numberOfPrimeNums){
-			if(PrimeCheck(cost))
+			isPrime = PrimeCheck(cost);
+			if(isPrime == 1)
 				counter++;
 			cost++;
 		}
