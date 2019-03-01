@@ -13,7 +13,7 @@ This repository contains a number of programs I made in C++ as practice
   - Bitwise
   - Logical
   - Conditional
-  - Miscallenous
+  - Miscellaneous
     - Dereference (*)
     - Address of (&)
 ## Arrays
