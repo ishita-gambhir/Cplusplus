@@ -21,10 +21,11 @@ This repository contains a number of programs I made in C++ as practice
 - 1-D Arrays
 - 2-D Arrays
 - Strings
+  [BOTH STATIC AND DYNAMIC]
 ## Searching and Sorting
 ### This folder contains programs using:-
 - Linear Search
-- Binay Search
+- Binary Search
 - Bubble Sort
 - Selection Sort
 - Insertion Sort
