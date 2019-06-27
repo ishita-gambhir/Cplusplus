@@ -19,26 +19,23 @@ Sample Output
 //this doesn't work for worst case. it has o(nlogn) time complexity but for avg case only
 #include<iostream>
 using namespace std;
-void quickSort(long int array[], int start, int end){
-	if(start >= end){
-		return;
-	}
+int partition(long int array[], int start, int end){
 	int i = start - 1;
 	int pivot = array[end];
 	for(int j = start; j < end; j++){
 		if(array[j] <= pivot){
 			i++;
-			//swap a[i] and a[j]
-			int temp = array[i];
-			array[i] = array[j];
-			array[j] = temp;
+			swap(array[j], array[i]);
 		}
 	}
-	//swap a[e] and a[i+1]
-	int temp = array[end];
-	array[end] = array[i+1];
-	array[i+1] = temp;
-	int p = i + 1;
+	swap(array[end], array[i+1]);
+	return i + 1;
+}
+void quickSort(long int array[], int start, int end){
+	if(start >= end){
+		return;
+	}
+	int p = partition(array, start, end);
 	quickSort(array, start, p - 1);
 	quickSort(array, p + 1, end);
 }
