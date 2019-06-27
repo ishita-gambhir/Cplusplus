@@ -16,7 +16,7 @@ Sample Input
 Sample Output
 1 2 3 4 6 
 */
-//this doesn't work for worst case. it has o(nlogn) time complexity but for avg case only
+//this doesn't work for worst case. it has o(nlogn) time complexity but for avg case only. It has complexity of O(n^2) in the worst case [is the array is sorted]
 #include<iostream>
 using namespace std;
 int partition(long int array[], int start, int end){
