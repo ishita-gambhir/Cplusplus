@@ -16,6 +16,7 @@ Sample Input
 Sample Output
 1 2 3 4 6 
 */
+//this doesn't work for worst case. it has o(nlogn) time complexity but for avg case only
 #include<iostream>
 using namespace std;
 void quickSort(long int array[], int start, int end){
