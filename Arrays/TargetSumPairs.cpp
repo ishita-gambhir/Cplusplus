@@ -27,34 +27,28 @@ change value in other array accordingly, and print simultaneously.
 #include<iostream>
 #include<algorithm>
 using namespace std;
-
-void printTargetSumPairs(int target, int array[1000], int sizeOfArray){
-	int elementCondition[1000] = {0}, i, j;
-	//elementCondition = {0};
-	for(i = 0; i < sizeOfArray; i++){
-		for(j = sizeOfArray - 1; j >= 0; j--){
-			if(elementCondition[i] == 0 && elementCondition[j] == 0){
-				if(array[i] + array[j] == target){
-					elementCondition[i] = 1;
-					elementCondition[j] = 1;
-					cout << (i > j ? (array[j]) : (array[i]));
-					cout << " and ";
-					cout << (i > j ? (array[i]) : (array[j]));
-					cout << endl;
-				}
-			}
-		}
-	}
-}
 int main(){
-	int sizeOfArray, array[1000], target;
-	//input values
-	cin >> sizeOfArray;
-	for(int i = 0; i < sizeOfArray; i++){
-		cin >> array[i];
+	int arr[1000], target, numOfElements;
+	cin >> numOfElements;
+	for(int i = 0; i < numOfElements; i++){
+		cin >> arr[i];
 	}
 	cin >> target;
-	sort(array, array + sizeOfArray);
-	printTargetSumPairs(target, array, sizeOfArray);
+	sort(arr, arr + numOfElements);
+	int left = 0, right = numOfElements - 1;
+	while(left < right){
+		if(arr[left] + arr[right] == target){
+			cout << arr[left] << " and " << arr[right] << endl;
+			left++;
+			right--;
+		}
+		else if(arr[left] + arr[right] > target){
+			right--;
+		}
+		else{
+			left++;
+		}
+
+	}
 	return 0;
 }
