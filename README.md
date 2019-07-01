@@ -7,6 +7,7 @@ This repository contains a number of programs I made in C++ as practice
   - Type conversions
   - Pointers
 - Loops
+  - Patterns
 - Different types of operators, including:
   - Arithmetic
   - Logical
