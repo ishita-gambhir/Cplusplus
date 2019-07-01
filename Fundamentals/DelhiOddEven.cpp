@@ -20,34 +20,38 @@ No
 */
 #include<iostream>
 using namespace std;
-int sum(int number){
-	int sumOfNumDig = 0;
+
+int sumOdd(int number){
+	int sumDigits = 0;
 	while(number > 0){
-		sumOfNumDig += (number % 10);
+		if((number % 10) % 2 != 0)
+			sumDigits += number % 10;
 		number /= 10;
 	}
-	return sumOfNumDig;
+	return sumDigits;
+}
+int sumEven(int number){
+	int sumDigits = 0;
+	while(number > 0){
+		if((number % 10) % 2 == 0)
+			sumDigits += number % 10;
+		number /= 10;
+	}
+	return sumDigits;
 }
 void carCheck(int carNumber){
-	int sumOfDigits = 0;
-	sumOfDigits = sum(carNumber);
-	if(sumOfDigits % 2 == 0){
-		if(sumOfDigits % 4 == 0)
-			cout << "Yes" << endl;
-		else
-			cout << "No" << endl;
+	if(sumEven(carNumber) % 4 == 0 || sumOdd(carNumber) % 3 == 0){
+		cout << "Yes\n";
 	}
 	else{
-		if(sumOfDigits % 3 == 0)
-			cout << "Yes" << endl;
-		else
-			cout << "No" << endl;
+		cout << "No\n";
 	}
 }
 int main(){
-	int carNumber = 0, numberOfTestCases = 0;
+	int numberOfTestCases;
 	cin >> numberOfTestCases;
 	for(int i = 0; i < numberOfTestCases; i++){
+		int carNumber;
 		cin >> carNumber;
 		carCheck(carNumber);
 	}
