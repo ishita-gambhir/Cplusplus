@@ -14,18 +14,23 @@ Sample Output
 #include<iostream>
 #include<cmath>
 using namespace std;
-int BinToDec(int BinaryNum){
-	int powerOf2 = 0, DecimalNum = 0;
-	while(BinaryNum > 0){
-		DecimalNum += (BinaryNum % 2) * pow(2, powerOf2);
-		BinaryNum /= 10;
-		powerOf2++;
-	}
-	return DecimalNum;
-}
 int main(){
-	int Binary = 0;
-	cin >> Binary;
-	cout << BinToDec(Binary);
+	int a = 0, b = 0, c = 0, d = 0, r1 = 0, r2 = 0;
+	cin >> a >> b >> c;
+	d = ((b*b) - (4 * a * c));
+	r1 = (((-b) - pow(d, 0.5))/(2 * a));
+	r2 = (((-b) + pow(d, 0.5))/(2 * a));
+	if( d > 0){
+		cout << "Real and Distinct" << endl;
+		cout << r1 << " " << r2;
+	}
+	else if(d == 0){
+		cout << "Real and Equal" << endl;
+		cout << r1 << " " << r2;
+	}
+	else{
+		cout << "Imaginary";
+	}
+
 	return 0;
 }

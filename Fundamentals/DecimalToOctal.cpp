@@ -12,15 +12,16 @@ Sample Output
 77
 */
 #include<iostream>
+#include<cmath>
 using namespace std;
 int DecToOct(int DecimalNum){
-	int OctcalNum = 0;
-	while(DecimalNum > 0){
-		OctcalNum += (DecimalNum % 8);
+	int OctcalNum = 0, power = 0;
+	while(DecimalNum){
+		OctcalNum += (DecimalNum % 8) * pow(10, power);
+		power++;
 		DecimalNum /= 8;
-		OctcalNum *= 10;
 	}
-	return OctcalNum/10;
+	return OctcalNum;
 }
 int main(){
 	int Decimal = 0;
