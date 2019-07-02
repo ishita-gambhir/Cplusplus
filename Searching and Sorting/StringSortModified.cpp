@@ -29,18 +29,15 @@ bool myCompare(string s1, string s2){
 	int i = 0;
 	//cout << "comparing" << s1 << s2 << endl;
 	while(s1[i] != '\0' && s2[i] != '\0'){
-		if(s1[i] < s2[i]){		
+		if(s1[i] != s2[i]){		
 			//cout << "check1\n";
 			return s1[i] < s2[i];
-		}
-		if(s1[i] > s2[i]){
-			return s1[i] > s2[i];
 		}
 		i++;
 	}
 	if(s1[i] == '\0'){
 		//cout << "Check2\n";
-		return s2[i] > s1[i];
+		return s2[i] < s1[i];
 	}
 	//cout << "check3 \n";
 	return s1[i] > s2[i];
