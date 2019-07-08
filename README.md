@@ -63,7 +63,9 @@ This repository contains a number of programs I made in C++ to practice data str
 
 ## Recursion
 
-### In this folder, a variety of different problems and algorithms have been implemented using recursion 
+### In this folder, a variety of different problems and algorithms have been implemented using recursion.
+
+### The concept of backtracking is also used in some problems.
 
 ## Searching and Sorting
 
