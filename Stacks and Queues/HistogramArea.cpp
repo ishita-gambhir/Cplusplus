@@ -17,17 +17,18 @@ Sample Input
 Sample Output
 9
 */
-//o(n^2) time complexity -ans not accepted --wrong answer
+//o(n^2) time complexity
 #include <iostream>
 using namespace std;
 int main(){
 	int numOfBars;
 	cin >> numOfBars;
-	int histogram[1000000];
+	long int histogram[1000000];
 	for(int i = 0; i < numOfBars; i++){
 		cin >> histogram[i];
 	}
-	int l_min, r_min, area[1000000];
+	int l_min, r_min;
+	long int area[1000000];
 	for(int i = 0; i < numOfBars; i++){
 		l_min = -1;
 		//search for l_min
@@ -48,7 +49,7 @@ int main(){
 		}
 		area[i] = histogram[i] * (r_min - l_min - 1);
 	}
-	int max_area = 0;
+	long int max_area = 0;
 	for(int i = 0; i < numOfBars; i++){
 		max_area = max(max_area, area[i]);
 	}
