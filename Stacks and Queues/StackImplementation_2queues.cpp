@@ -1,14 +1,15 @@
 #include<iostream>
 #include<queue>
 using namespace std;
+template <typename T>
 class stackUsingQueue{
-	queue<int> *q1, *q2;
+	queue<T> *q1, *q2;
 public:
 	stackUsingQueue(){
-		q1 = new queue<int>;
-		q2 = new queue<int>;
+		q1 = new queue<T>;
+		q2 = new queue<T>;
 	}
-	void push(int data){
+	void push(T data){
 		q1->push(data);
 	}
 	void pop(){
@@ -30,16 +31,18 @@ public:
 		delete q2;
 	}
 };
-void makeStack(stackUsingQueue &s){
+template <typename T>
+void makeStack(stackUsingQueue<T> &s){
 	int numOfElements;
 	cin >> numOfElements;
 	for(int i = 0; i < numOfElements; i++){
-		int data;
+		T data;
 		cin >> data;
 		s.push(data);
 	}
 }
-void printStack(stackUsingQueue s){
+template <typename T>
+void printStack(stackUsingQueue<T> s){
 	while(!s.empty()){
 		cout << s.top() << " ";
 		s.pop();
@@ -47,7 +50,7 @@ void printStack(stackUsingQueue s){
 	cout << endl;
 }
 int main(){
-	stackUsingQueue s;
+	stackUsingQueue<int> s;
 	//makeStack(s);
 	printStack(s);
 	s.pop();
