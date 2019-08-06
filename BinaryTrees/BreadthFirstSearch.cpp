@@ -26,15 +26,25 @@ node* buildTree(){
 void BFS(node* root){
 	queue<node*> q1;
 	q1.push(root);
+	q1.push(NULL);
 	while(!q1.empty()){
-		if(q1.front()->left != NULL){
-			q1.push(q1.front()->left);	
+		if(q1.front() == NULL){
+			cout << endl;
+			q1.pop();
+			if(!q1.empty()){
+				q1.push(NULL);
+			}
 		}
-		if(q1.front()->right != NULL){
-			q1.push(q1.front()->right);
+		else{
+			if(q1.front()->left != NULL){
+				q1.push(q1.front()->left);	
+			}
+			if(q1.front()->right != NULL){
+				q1.push(q1.front()->right);
+			}
+			cout << q1.front()->data << " ";
+			q1.pop();
 		}
-		cout << q1.front()->data << " ";
-		q1.pop();
 	}
 };
 int main(){
