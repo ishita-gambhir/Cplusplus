@@ -20,6 +20,7 @@ node* buildTree(){
 	node* root = new node(d);
 	root->left = buildTree();
 	root->right = buildTree();
+	return root;
 }
 void printTree(node* root){
 	if(root == NULL){
